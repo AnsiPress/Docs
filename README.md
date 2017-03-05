@@ -1,4 +1,4 @@
-# AnsiPress Documentation
+AnsiPress Documentation
 
 ## Quick Setup
 
@@ -41,13 +41,7 @@ $ git clone -b 'v0.1.0-beta' --single-branch --depth 1 https://github.com/AnsiPr
 #### Setup Ansible hosts file
 
 ```
-$ cd AnsiPress
-```
-
-Setup hosts  file according to following format
-
-```
-$ vim hosts
+$ cd AnsiPress && cat hosts
 [AnsiPress]
 AnsiPress.local
 ```
