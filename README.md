@@ -6,11 +6,33 @@ AnsiPress is based on Ansible. So AnsiPress can operate from any system where An
 
 ### Prerequisites
 
-Ansible Installed on the machine\(controller\) where from you will be managing your servers.  This can be your local system or your server where you want to setup your stack.
+* SSH Setup
+* Ansible Installation
+* Ansible Hosts File
 
-#### Install Ansible  \(on Controller Machine\)
+#### SSH Setup
 
-##### Ubuntu
+In order to make AnsiPress works, We have to able remote server via `ssh hostname`
+
+```
+$ vim ~/.ssh/config
+Host AnsiPress.local
+  user root
+  port 22
+  hostname 192.168.33.16
+```
+
+Test SSH Connection
+
+`$ ssh AnsiPress.local`
+
+#### Install Ansible
+
+Ansible Installed on the machine\(controller\) where from you will be managing your servers.  
+
+This can be your local system or your server where you want to setup your stack.
+
+#### Ubuntu
 
 ```
 $ sudo apt-get install software-properties-common
@@ -35,13 +57,13 @@ $ brew install ansible
 #### Install AnsiPress Beta Version
 
 ```
-$ git clone -b 'v0.1.0-beta' --single-branch --depth 1 https://github.com/AnsiPress/AnsiPress.git
+$ git clone https://github.com/AnsiPress/AnsiPress.git
 ```
 
 #### Setup Ansible hosts file
 
 ```
-$ cd AnsiPress && cat hosts
+$ cd AnsiPress && vim hosts
 [AnsiPress]
 AnsiPress.local
 ```
