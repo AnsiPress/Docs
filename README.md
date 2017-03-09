@@ -12,7 +12,7 @@ AnsiPress is based on Ansible. So AnsiPress can operate from any system where An
 
 #### SSH Setup
 
-In order to make AnsiPress works, We have to able remote server via `ssh hostname`
+In order to make AnsiPress works, we should be able to connect to remote server via `ssh hostname`
 
 ```
 $ vim ~/.ssh/config
@@ -28,7 +28,7 @@ Test SSH Connection
 
 #### Install Ansible
 
-Ansible Installed on the machine\(controller\) where from you will be managing your servers.  
+Ansible Installed on the machine\(controller\) where from you will be managing your servers.
 
 This can be your local system or your server where you want to setup your stack.
 
