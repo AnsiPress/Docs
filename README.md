@@ -90,6 +90,7 @@ ansible-playbook
 * **username**   - This  variable will create a separate linux user which will have access to the particular website you are going to create. If you want to use the same user to host multiple website you can use the same user name everytime you run the command
 
 * **website\_name -  **This variable specifies the domain name of the website. just like `example.com`
+
 * **website\_type - **This variable setup the configuration for the website according to the type specified among 
   * html - specifies set of tasks to run configure a website that can serve static contents only
   * php -  specifies set of tasks to run that configures a web app/site that requires php and can run without database.
@@ -98,7 +99,7 @@ ansible-playbook
   * w3tc - specifies set of tasks to run that configures a wordpress website and install w3 total cache plugin for cacheing purpose.
   * wpfc - specifies set of tasks to run that configures wordpress website and setup fastcgi cache configuration, generally required for high traffic websites.
 
-### Example commands to create site 
+### Example commands to create site
 
 #### HTML
 
@@ -138,5 +139,18 @@ $ ansible-playbook -i hosts setup.yml --extra-vars="username=exampleuser website
 $ ansible-playbook -i hosts setup.yml --extra-vars="username=exampleuser website_name=wpfc.com website_type=wpfc"
 ```
 
+##  Lets Encrypt
 
+```
+$ sudo certbot --nginx certonly -d example.com -d www.example.com
+$ vim /home/exampleuser/vhosts/example.com/conf/ssl.conf
+listen 443 ssl http2;
+ssl on;
+ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;
+ssl_certificate_key     /etc/letsencrypt/live/example.com/privkey.pem;
+
+$ nginx -t && service nginx reload
+```
+
+For more details about certbot refer - https://certbot.eff.org/\#ubuntuxenial-nginx
 
