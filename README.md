@@ -91,7 +91,8 @@ ansible-playbook
 
 * **website\_name -  **This variable specifies the domain name of the website. just like `example.com`
 
-* **website\_type - **This variable setup the configuration for the website according to the type specified among 
+* **website\_type - **This variable setup the configuration for the website according to the type specified among
+
   * html - specifies set of tasks to run configure a website that can serve static contents only
   * php -  specifies set of tasks to run that configures a web app/site that requires php and can run without database.
   * mysql - specifies set of tasks to run that configures a web app/site that requires php and mysql database.
@@ -139,7 +140,26 @@ $ ansible-playbook -i hosts setup.yml --extra-vars="username=exampleuser website
 $ ansible-playbook -i hosts setup.yml --extra-vars="username=exampleuser website_name=wpfc.com website_type=wpfc"
 ```
 
-##  Lets Encrypt
+## Purge FastCGI Cache
+
+```
+Clean Homepage: http://example.com/purge
+Clean Hello World Post: http://example.com/purge/hello-world
+Clean All NGINX FastCGI Cache: http://example.com/purge.php 
+
+```
+
+## Google Pagespeed
+
+```
+Pagespeed stats:  http://example.com/ngx_pagespeed_statistics
+
+Tempp Disable Pagespeed: http://example.com/?PageSpeed=off
+
+Purge File From Pagespeed cache: http://exmple.com/pagespeed_admin/cache?purge=/path/file.ext
+```
+
+## Lets Encrypt
 
 ```
 $ sudo certbot --nginx certonly -d example.com -d www.example.com
@@ -152,5 +172,5 @@ ssl_certificate_key     /etc/letsencrypt/live/example.com/privkey.pem;
 $ nginx -t && service nginx reload
 ```
 
-For more details about certbot refer - https://certbot.eff.org/\#ubuntuxenial-nginx
+For more details about certbot refer - [https://certbot.eff.org/\#ubuntuxenial-nginx](https://certbot.eff.org/#ubuntuxenial-nginx)
 
