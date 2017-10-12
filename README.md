@@ -164,6 +164,7 @@ Purge File From Pagespeed cache: http://exmple.com/pagespeed_admin/cache?purge=/
 ```
 $ sudo certbot --nginx certonly -d example.com -d www.example.com
 $ vim /home/exampleuser/vhosts/example.com/conf/ssl.conf
+listen 80;
 listen 443 ssl http2;
 ssl on;
 ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;
