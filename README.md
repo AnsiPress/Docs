@@ -1,6 +1,8 @@
 AnsiPress Documentation
 
 ## Quick Setup
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FAnsiPress%2FDocs.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FAnsiPress%2FDocs?ref=badge_shield)
+
 
 AnsiPress is based on Ansible. So AnsiPress can operate from any system where Ansible can be installed.
 
@@ -175,3 +177,7 @@ $ nginx -t && service nginx reload
 
 For more details about certbot refer - [https://certbot.eff.org/\#ubuntuxenial-nginx](https://certbot.eff.org/#ubuntuxenial-nginx)
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FAnsiPress%2FDocs.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FAnsiPress%2FDocs?ref=badge_large)
